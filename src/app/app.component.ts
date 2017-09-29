@@ -1,3 +1,4 @@
+import * as Raven from 'raven-js';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  ngOnInit() {
+    Raven.captureException(new Error('capture'))
+    throw new Error('throw')
+  }
 }

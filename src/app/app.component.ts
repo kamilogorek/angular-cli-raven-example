@@ -8,7 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public items: any[];
   ngOnInit() {
+    this.items = [1, 2];
     Raven.captureException(new Error('capture'))
     throw new Error('throw')
   }
